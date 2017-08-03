@@ -1,0 +1,5 @@
+#!/bin/bash --norc
+
+exec -a chromium_objcopy \
+    external/org_chromium_binutils_linux_x64/bin/objcopy \
+    "$@"
