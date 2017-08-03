@@ -1,6 +1,6 @@
 # Bazel Toolchains
 
-A collection of [Bazel](https://bazel.build) C++ build infrastructure based on [Chromium](https://chromium.org)'s [LLVM](https://llvm.org) toolchain. There are tags corresponding to stable Chromium releases. The build targets currently supported are Linux x64 and macOS. As in Chromium, the Linux toolchain has a sysroot, bundled copies of binutils, and a copy of libc++. The macOS build is less hermetic, and relies on system binutils and libraries.
+A collection of [Bazel](https://bazel.build) C++ build infrastructure based on [Chromium](https://chromium.org)'s [LLVM](https://llvm.org) toolchain. There are tags corresponding to Chromium releases. The build targets currently supported are Linux x64 and macOS. As in Chromium, the Linux toolchain has a sysroot, bundled copies of binutils, and a copy of libc++. The macOS build is less hermetic, and relies on system binutils and libraries.
 
 ## Prerequisites
 
