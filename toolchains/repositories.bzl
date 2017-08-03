@@ -14,7 +14,7 @@
 # limitations under the License.
 
 # Defines external repositories needed by bazel-toolchains.
-# Chromium toolchain corresponds to Chromium 61.0.3153.4.
+# Chromium toolchain corresponds to Chromium 61.0.3163.25.
 
 def bazel_toolchains_repositories():
     org_chromium_clang_mac()
@@ -29,16 +29,16 @@ def org_chromium_clang_mac():
     native.new_http_archive(
         name = 'org_chromium_clang_mac',
         build_file = str(Label('//build_files:org_chromium_clang_mac.BUILD')),
-        sha256 = '9195a37d06c52a208415d14efd31fc807e100258478c69465239df1e30e59761',
-        urls = ['https://commondatastorage.googleapis.com/chromium-browser-clang/Mac/clang-305735-3.tgz'],
+        sha256 = '29d3bde888041fe3d43a756daaa79cc5c16d83af6c20ccac05f5f7b9e2db5efb',
+        urls = ['https://commondatastorage.googleapis.com/chromium-browser-clang/Mac/clang-307486-1.tgz'],
     )
 
 def org_chromium_clang_linux_x64():
     native.new_http_archive(
         name = 'org_chromium_clang_linux_x64',
         build_file = str(Label('//build_files:org_chromium_clang_linux_x64.BUILD')),
-        sha256 = '9088f855c587d236e924b3c0e1942f45d8eb30630c355970d6ca3f32611ed96f',
-        urls = ['https://commondatastorage.googleapis.com/chromium-browser-clang/Linux_x64/clang-305735-3.tgz'],
+        sha256 = '8e0b56a133041f6bac341528224b7ba93a93ff3bb407b238feacbcf7cd63be0b',
+        urls = ['https://commondatastorage.googleapis.com/chromium-browser-clang/Linux_x64/clang-307486-1.tgz'],
     )
 
 def org_chromium_sysroot_linux_x64():
