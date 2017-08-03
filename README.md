@@ -2,6 +2,23 @@
 
 A collection of [Bazel](https://bazel.build) C++ build infrastructure based on [Chromium](https://chromium.org)'s [LLVM](https://llvm.org) toolchain. There are tags corresponding to Chromium releases. The build targets currently supported are Linux x64 and macOS. As in Chromium, the Linux toolchain has a sysroot, bundled copies of binutils, and a copy of libc++. The macOS build is less hermetic, and relies on system binutils and libraries.
 
+Use it in your Bazel WORKSPACE file like this:
+
+```
+git_repository(
+    name = 'co_vsco_bazel_toolchains',
+    remote = 'https://github.com/vsco/bazel-toolchains',
+    tag = '61.0.3163.25',
+)
+
+load("@co_vsco_bazel_toolchains//toolchains:repositories.bzl", "bazel_toolchains_repositories")
+bazel_toolchains_repositories()
+```
+
+Invoke Bazel with the custom toolchain:
+
+`bazel build --crosstool_top=@co_vsco_bazel_toolchains//tools/cpp:default-toolchain //your/build:target`
+
 ## Prerequisites
 
 On macOS, run `xcode-select --install` in Terminal.
