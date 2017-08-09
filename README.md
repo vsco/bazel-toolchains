@@ -29,4 +29,4 @@ The files in the `scripts/` directory are written in Python. Follow these [instr
 
 Once that's working, type `pip install requests` to install the necessary dependencies.
 
-From the root of this repository, type `python scripts/generate_workspace.py --rev="61.0.3153.4"` where --rev is the Chromium tag you wish to pull from. The script will print status messages to `stderr` and write a file similar to toolchains/repositories.bzl to `stdout`.
+From the root of this repository, type `python scripts/generate_workspace.py --rev="62.0.3178.0"` where --rev is the Chromium tag you wish to pull from. The script will print status messages to `stderr` and write a file similar to toolchains/repositories.bzl to `stdout`.

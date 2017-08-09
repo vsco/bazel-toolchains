@@ -7,7 +7,7 @@ TEST(CompilerMeta, AppleBuild) {
   // __apple_build_version__ shouldn't be defined in the Chromium toolchain
   ASSERT_TRUE(false);
 #else
-  ASSERT_GE(__clang_major__, 5);
+  ASSERT_GE(__clang_major__, 6);
 #endif
 }
 

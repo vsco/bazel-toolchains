@@ -14,7 +14,7 @@
 # limitations under the License.
 
 # Defines external repositories needed by bazel-toolchains.
-# Chromium toolchain corresponds to Chromium 61.0.3163.25.
+# Chromium toolchain corresponds to Chromium 62.0.3178.0.
 
 def bazel_toolchains_repositories():
     org_chromium_clang_mac()
@@ -29,24 +29,24 @@ def org_chromium_clang_mac():
     native.new_http_archive(
         name = 'org_chromium_clang_mac',
         build_file = str(Label('//build_files:org_chromium_clang_mac.BUILD')),
-        sha256 = '29d3bde888041fe3d43a756daaa79cc5c16d83af6c20ccac05f5f7b9e2db5efb',
-        urls = ['https://commondatastorage.googleapis.com/chromium-browser-clang/Mac/clang-307486-1.tgz'],
+        sha256 = '6687750ecf56aa3740fa4f6497a16518b50c3a3c8a89465dba45d799791fb06d',
+        urls = ['https://commondatastorage.googleapis.com/chromium-browser-clang/Mac/clang-308728-3.tgz'],
     )
 
 def org_chromium_clang_linux_x64():
     native.new_http_archive(
         name = 'org_chromium_clang_linux_x64',
         build_file = str(Label('//build_files:org_chromium_clang_linux_x64.BUILD')),
-        sha256 = '8e0b56a133041f6bac341528224b7ba93a93ff3bb407b238feacbcf7cd63be0b',
-        urls = ['https://commondatastorage.googleapis.com/chromium-browser-clang/Linux_x64/clang-307486-1.tgz'],
+        sha256 = 'fa233796a7f5e8a8a0f1c00699f3a18ad04834226a06519f8f29d49bc5d7842f',
+        urls = ['https://commondatastorage.googleapis.com/chromium-browser-clang/Linux_x64/clang-308728-3.tgz'],
     )
 
 def org_chromium_sysroot_linux_x64():
     native.new_http_archive(
         name = 'org_chromium_sysroot_linux_x64',
         build_file = str(Label('//build_files:org_chromium_sysroot_linux_x64.BUILD')),
-        sha256 = 'ad9bf71fad4e37e1cae53709bcd95c96c4bb9114f1e1551d60947df3846551aa',
-        urls = ['https://commondatastorage.googleapis.com/chrome-linux-sysroot/toolchain/ebb50a1c59e577567470b00582f81ed14222353e/debian_jessie_amd64_sysroot.tgz'],
+        sha256 = '849abc23f3d6438409e720a89c5101e49ac18754feb947efcaa701e6d30de77b',
+        urls = ['https://commondatastorage.googleapis.com/chrome-linux-sysroot/toolchain/e6ac45fd042859d2240e5d432c521df01ad5b7bf/debian_jessie_amd64_sysroot.tar.xz'],
     )
 
 def org_chromium_binutils_linux_x64():
