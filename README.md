@@ -8,7 +8,7 @@ Use it in your Bazel WORKSPACE file like this:
 git_repository(
     name = 'co_vsco_bazel_toolchains',
     remote = 'https://github.com/vsco/bazel-toolchains',
-    tag = 'v62.0.3178.0',
+    tag = 'v62.0.3202.9',
 )
 
 load("@co_vsco_bazel_toolchains//toolchains:repositories.bzl", "bazel_toolchains_repositories")
@@ -29,4 +29,4 @@ The files in the `scripts/` directory are written in Python. Follow these [instr
 
 Once that's working, type `pip install requests` to install the necessary dependencies.
 
-From the root of this repository, type `python scripts/generate_workspace.py --rev="62.0.3178.0"` where --rev is the Chromium tag you wish to pull from. The script will print status messages to `stderr` and write a file similar to toolchains/repositories.bzl to `stdout`.
+From the root of this repository, type `python scripts/generate_workspace.py --rev="62.0.3202.9"` where --rev is the Chromium tag you wish to pull from. The script will print status messages to `stderr` and write a file similar to toolchains/repositories.bzl to `stdout`.
