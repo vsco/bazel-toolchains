@@ -10,7 +10,7 @@ matrix:
 
 env:
   global:
-    - BAZEL_VERSION=0.5.2
+    - BAZEL_VERSION=0.9.0
 
 before_install:
   - echo $TRAVIS_OS_NAME;
