@@ -8,7 +8,7 @@ Use it in your Bazel WORKSPACE file like this:
 git_repository(
     name = 'co_vsco_bazel_toolchains',
     remote = 'https://github.com/vsco/bazel-toolchains',
-    tag = 'v64.0.3282.167,
+    tag = 'v64.0.3282.167',
 )
 
 load("@co_vsco_bazel_toolchains//toolchains:repositories.bzl", "bazel_toolchains_repositories")
