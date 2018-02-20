@@ -67,8 +67,10 @@ cc_library(
     "src/utility.cpp",
     "src/valarray.cpp",
     "src/variant.cpp",
+    "src/vector.cpp",
     "src/include/atomic_support.h",
     "src/include/config_elast.h",
+    "src/include/refstring.h",
   ],
   deps = [
     "@org_chromium_libcxxabi//:include",

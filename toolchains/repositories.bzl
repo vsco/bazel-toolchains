@@ -14,7 +14,7 @@
 # limitations under the License.
 
 # Defines external repositories needed by bazel-toolchains.
-# Chromium toolchain corresponds to Chromium 62.0.3202.9.
+# Chromium toolchain corresponds to Chromium 64.0.3282.167.
 
 def bazel_toolchains_repositories():
     org_chromium_clang_mac()
@@ -29,24 +29,24 @@ def org_chromium_clang_mac():
     native.new_http_archive(
         name = 'org_chromium_clang_mac',
         build_file = str(Label('//build_files:org_chromium_clang_mac.BUILD')),
-        sha256 = '52a2da67eb5afbc3057e6a2868dcae000b2883798fd1376a1a2ef3f73b5547c8',
-        urls = ['https://commondatastorage.googleapis.com/chromium-browser-clang/Mac/clang-310694-2.tgz'],
+        sha256 = '4f0aca6ec66281be94c3045550ae15a73befa59c32396112abda0030ef22e9b6',
+        urls = ['https://commondatastorage.googleapis.com/chromium-browser-clang/Mac/clang-318667-1.tgz'],
     )
 
 def org_chromium_clang_linux_x64():
     native.new_http_archive(
         name = 'org_chromium_clang_linux_x64',
         build_file = str(Label('//build_files:org_chromium_clang_linux_x64.BUILD')),
-        sha256 = '24c96b5a10cf6dc41b3c58c5b81cabf5f1949db16a4c462dbd902d5239cf503a',
-        urls = ['https://commondatastorage.googleapis.com/chromium-browser-clang/Linux_x64/clang-310694-2.tgz'],
+        sha256 = 'e63e5fe3ec8eee4779812cd16aae0ddaf1256d2e8e93cdd5914a3d3e01355dc1',
+        urls = ['https://commondatastorage.googleapis.com/chromium-browser-clang/Linux_x64/clang-318667-1.tgz'],
     )
 
 def org_chromium_sysroot_linux_x64():
     native.new_http_archive(
         name = 'org_chromium_sysroot_linux_x64',
         build_file = str(Label('//build_files:org_chromium_sysroot_linux_x64.BUILD')),
-        sha256 = '849abc23f3d6438409e720a89c5101e49ac18754feb947efcaa701e6d30de77b',
-        urls = ['https://commondatastorage.googleapis.com/chrome-linux-sysroot/toolchain/e6ac45fd042859d2240e5d432c521df01ad5b7bf/debian_jessie_amd64_sysroot.tar.xz'],
+        sha256 = '84656a6df544ecef62169cfe3ab6e41bb4346a62d3ba2a045dc5a0a2ecea94a3',
+        urls = ['https://commondatastorage.googleapis.com/chrome-linux-sysroot/toolchain/2202c161310ffde63729f29d27fe7bb24a0bc540/debian_stretch_amd64_sysroot.tar.xz'],
     )
 
 def org_chromium_binutils_linux_x64():
@@ -62,7 +62,7 @@ def org_chromium_libcxx():
     native.new_git_repository(
         name = 'org_chromium_libcxx',
         build_file = str(Label('//build_files:org_chromium_libcxx.BUILD')),
-        commit = '3a07dd740be63878167a0ea19fe81869954badd7',
+        commit = 'f56f1bba1ade4a408d403ff050d50e837bae47df',
         remote = 'https://chromium.googlesource.com/chromium/llvm-project/libcxx',
     )
 
@@ -70,7 +70,7 @@ def org_chromium_libcxxabi():
     native.new_git_repository(
         name = 'org_chromium_libcxxabi',
         build_file = str(Label('//build_files:org_chromium_libcxxabi.BUILD')),
-        commit = '4072e8fd76febee37f60aeda76d6d9f5e3791daa',
+        commit = '05ba3281482304ae8de31123a594972a495da06d',
         remote = 'https://chromium.googlesource.com/chromium/llvm-project/libcxxabi',
     )
 
@@ -78,7 +78,6 @@ def org_chromium_libunwind():
     native.new_git_repository(
         name = 'org_chromium_libunwind',
         build_file = str(Label('//build_files:org_chromium_libunwind.BUILD')),
-        commit = '41f982e5887185b904a456e20dfcd58e6be6cc19',
+        commit = 'fc0a910c25d5415dd72ba9451b7cba380e3cc1e7',
         remote = 'https://chromium.googlesource.com/chromium/llvm-project/libunwind',
     )
-

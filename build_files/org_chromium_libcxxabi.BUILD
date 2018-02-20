@@ -33,6 +33,7 @@ cc_library(
     "LIBCXX_BUILDING_LIBCXXABI",
   ],
   srcs = [
+    "src/include/refstring.h",
     "src/abort_message.h",
     "src/abort_message.cpp",
     "src/cxa_aux_runtime.cpp",

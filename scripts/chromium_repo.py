@@ -89,7 +89,7 @@ def sysroot_url(sysroot):
 def download_sysroot_info(revision):
     sysroot_json = base64_dl("%s/%s/build/linux/sysroot_scripts/sysroots.json" % (SRC_REPO, revision))
     sysroots = json.loads(sysroot_json)
-    amd64 = sysroots["jessie_amd64"]
+    amd64 = sysroots["stretch_amd64"]
     amd64["platform"] = "Linux_x64"
     return [{
         "platform": p["platform"],
