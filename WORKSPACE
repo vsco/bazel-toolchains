@@ -1,4 +1,5 @@
-# Chromium toolchain corresponding to Chromium 61.0.3153.4
+# Chromium toolchain corresponding to Chromium 64.0.3282.167
+workspace(name = "co_vsco_bazel_toolchains")
 
 load("//toolchains:repositories.bzl", "bazel_toolchains_repositories")
 bazel_toolchains_repositories()

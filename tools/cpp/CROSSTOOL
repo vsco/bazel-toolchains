@@ -45,6 +45,10 @@ toolchain {
   linker_flag: "-lm"
   linker_flag: "-lpthread"
   linker_flag: "--sysroot=external/org_chromium_sysroot_linux_x64"
+  linker_flag: "-Lbazel-out/host/bin/external/org_chromium_libcxx/"
+  linker_flag: "-lcxx-linux_x64"
+  linker_flag: "-Lbazel-out/host/bin/external/org_chromium_libcxxabi"
+  linker_flag: "-lcxxabi-linux_x64"
 
   needsPic: true
   objcopy_embed_flag: "-I"
@@ -147,6 +151,7 @@ toolchain {
   }
 }
 
+
 # Chromium Clang on OS X
 toolchain {
   toolchain_identifier: "osx"
@@ -162,7 +167,7 @@ toolchain {
 
   
   # Uncomment for debugging.
-  # compiler_flag: "-v"
+  compiler_flag: "-v"
 
   cxx_flag: "-std=c++1y"
   linker_flag: "-undefined"
@@ -175,7 +180,7 @@ toolchain {
   compiler_flag: "-isystem"
   compiler_flag: "external/org_chromium_clang_mac/include/c++/v1"
   compiler_flag: "-isystem"
-  compiler_flag: "external/org_chromium_clang_mac/lib/clang/5.0.0/include"
+  compiler_flag: "external/org_chromium_clang_mac/lib/clang/6.0.0/include"
   compiler_flag: "-isystem"
   compiler_flag: "/usr/include"
   cxx_builtin_include_directory: "/usr/include"

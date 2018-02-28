@@ -59,10 +59,13 @@ filegroup(
     "@org_chromium_binutils_linux_x64//:binutils_components",
     "@org_chromium_clang_linux_x64//:compiler_components",
     "@org_chromium_sysroot_linux_x64//:sysroot",
+    "@org_chromium_libcxx//:cxx-linux_x64",
+    "@org_chromium_libcxxabi//:cxxabi-linux_x64",
+    "@org_chromium_clang_linux_x64//:lib",
     "@org_chromium_libcxx//:libcxx_includes",
     "@org_chromium_libcxxabi//:libcxxabi_includes",
   ],
-  visibility = ["//visibility:private"],
+  visibility = ["//visibility:public"],
 )
 
 config_setting(

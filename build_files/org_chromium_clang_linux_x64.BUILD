@@ -16,6 +16,5 @@ filegroup(
   name = "compiler_components",
   srcs = [
     ":clang",
-    ":lib",
   ],
 )

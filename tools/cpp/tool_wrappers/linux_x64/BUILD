@@ -1,4 +1,4 @@
-package(default_visibility = ['//tools/cpp:__pkg__'])
+package(default_visibility = ['//visibility:public'])
 
 filegroup(
   name = "clang",

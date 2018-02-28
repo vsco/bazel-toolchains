@@ -12,7 +12,6 @@ cc_test(
   ] + select({
     ':darwin_mode': [], 
     '//conditions:default': [
-      '@org_chromium_libcxx//:cxx',
     ],
   }),
 )
