@@ -167,7 +167,7 @@ toolchain {
 
   
   # Uncomment for debugging.
-  compiler_flag: "-v"
+  # compiler_flag: "-v"
 
   cxx_flag: "-std=c++1y"
   linker_flag: "-undefined"
