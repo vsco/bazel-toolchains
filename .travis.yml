@@ -1,17 +1,15 @@
-matrix:
-  include:
-    - os: linux
-      dist: trusty
-      sudo: required
-      language: java
-    - os: osx
-      osx_image: xcode8.3
-      language: java
+dist: trusty
+sudo: required
+osx_image: xcode8.3
+language: java
+
+os:
+  - linux
+  - osx
 
 env:
-  global:
-    - BAZEL_VERSION=0.9.0
-    - BAZEL_VERSION=0.11.1
+  - BAZEL_VERSION=0.9.0
+  - BAZEL_VERSION=0.11.1
 
 before_install:
   - echo $TRAVIS_OS_NAME;
