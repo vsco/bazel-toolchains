@@ -17,15 +17,7 @@ before_install:
   - echo $TRAVIS_OS_NAME;
   - unset CC
   - unset CXX
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get autoremove openjdk-9-jre-headless openjdk-9-jdk oracle-java9-installer; fi
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get purge openjdk-9-jre-headless openjdk-9-jdk oracle-java9-installer; fi
-  - mkdir -p ${HOME}/bazel/install
-  - pushd ${HOME}/bazel/install
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then wget --no-clobber https://github.com/bazelbuild/bazel/releases/download/${BAZEL_VERSION}/bazel_${BAZEL_VERSION}-linux-x86_64.deb; fi
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo dpkg -i bazel_${BAZEL_VERSION}-linux-x86_64.deb; fi
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update; fi
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install bazel; fi
-  - popd
+  - scripts/install_bazel.sh
 
 script:
   - bazel test --crosstool_top=//tools/cpp:default-toolchain //src/...
