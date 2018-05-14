@@ -51,7 +51,7 @@ for i in "$@"; do
 done
 
 # Call gcc
-${GCC} "$@"
+${GCC} -B /usr/bin "$@"
 
 function get_library_path() {
     for libdir in ${LIB_DIRS}; do
