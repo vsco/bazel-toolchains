@@ -9,7 +9,20 @@ os:
 
 env:
   - BAZEL_VERSION=0.9.0
+  - BAZEL_VERSION=0.10.1
   - BAZEL_VERSION=0.11.1
+  - BAZEL_VERSION=0.12.0
+  - BAZEL_VERSION=0.13.0
+
+matrix:
+  fast_finish: true
+  allow_failures:
+    - os: osx
+      env: BAZEL_VERSION=0.9.0
+    - os: osx
+      env: BAZEL_VERSION=0.10.1
+    - os: osx
+      env: BAZEL_VERSION=0.11.1
 
 before_install:
   - echo $TRAVIS_OS_NAME;

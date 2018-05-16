@@ -21,9 +21,9 @@ filegroup(
   srcs = glob(["include/**/*"])
 )
 
-cc_inc_library(
+cc_library(
   name = "include",
-  hdrs = [":libcxxabi_includes"]
+  includes = [":libcxxabi_includes"]
 )
 
 load("@co_vsco_bazel_toolchains//toolchains:libcxx_library.bzl", "libcxx_library")

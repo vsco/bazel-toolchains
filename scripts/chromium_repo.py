@@ -120,4 +120,4 @@ def download_toolchain_info(revision):
     exec(deps)
     tool_deps = base64_dl("%s/%s/DEPS" % (TOOLS_REPO, vars['buildtools_revision']))
     exec(tool_deps)
-    return [{'name': name, 'rev': vars[name + "_revision"]} for name in ["libcxx", "libcxxabi", "libunwind"]]
+    return [{'name': name, 'rev': vars[name + "_revision"]} for name in ["libcxx", "libcxxabi"]]

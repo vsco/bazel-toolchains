@@ -23,7 +23,6 @@ def bazel_toolchains_repositories():
     org_chromium_binutils_linux_x64()
     org_chromium_libcxx()
     org_chromium_libcxxabi()
-    org_chromium_libunwind()
 
 def org_chromium_clang_mac():
     native.new_http_archive(
@@ -72,12 +71,4 @@ def org_chromium_libcxxabi():
         build_file = str(Label('//build_files:org_chromium_libcxxabi.BUILD')),
         commit = '05ba3281482304ae8de31123a594972a495da06d',
         remote = 'https://chromium.googlesource.com/chromium/llvm-project/libcxxabi',
-    )
-
-def org_chromium_libunwind():
-    native.new_git_repository(
-        name = 'org_chromium_libunwind',
-        build_file = str(Label('//build_files:org_chromium_libunwind.BUILD')),
-        commit = 'fc0a910c25d5415dd72ba9451b7cba380e3cc1e7',
-        remote = 'https://chromium.googlesource.com/chromium/llvm-project/libunwind',
     )
