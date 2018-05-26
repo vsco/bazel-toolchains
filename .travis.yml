@@ -12,7 +12,7 @@ env:
   - BAZEL_VERSION=0.10.1
   - BAZEL_VERSION=0.11.1
   - BAZEL_VERSION=0.12.0
-  - BAZEL_VERSION=0.13.0
+  - BAZEL_VERSION=0.13.1
 
 matrix:
   fast_finish: true

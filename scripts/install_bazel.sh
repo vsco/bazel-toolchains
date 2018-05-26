@@ -32,13 +32,14 @@ pushd $BAZEL_INSTALL
 
 if [ "$TRAVIS_OS_NAME" == "linux" ]; then
     echo "Installing Bazel ${BAZEL_VERSION} for Linux"
-    DEBIAN_PACKAGE_NAME="bazel_${BAZEL_VERSION}-linux-x86_64.deb"
-    wget --no-clobber "https://github.com/bazelbuild/bazel/releases/download/${BAZEL_VERSION}/${DEBIAN_PACKAGE_NAME}"
-    sudo dpkg -i ${DEBIAN_PACKAGE_NAME}
+    DEBIAN_INSTALL_SCRIPT="bazel-${BAZEL_VERSION}-installer-linux-x86_64.sh"
+    wget --no-clobber "https://github.com/bazelbuild/bazel/releases/download/${BAZEL_VERSION}/${DEBIAN_INSTALL_SCRIPT}"
+    chmod +x ${DEBIAN_INSTALL_SCRIPT}
+    ./${DEBIAN_INSTALL_SCRIPT} --user
 elif [ "$TRAVIS_OS_NAME" == "osx" ]; then
     echo "Installing Bazel ${BAZEL_VERSION} for Darwin"
-    DARWIN_INSTALL_SCRIPT=bazel-${BAZEL_VERSION}-without-jdk-installer-darwin-x86_64.sh
-    curl -sLO https://github.com/bazelbuild/bazel/releases/download/${BAZEL_VERSION}/${DARWIN_INSTALL_SCRIPT}
+    DARWIN_INSTALL_SCRIPT=bazel-${BAZEL_VERSION}-installer-darwin-x86_64.sh
+    curl -sLO "https://github.com/bazelbuild/bazel/releases/download/${BAZEL_VERSION}/${DARWIN_INSTALL_SCRIPT}"
     chmod +x ${DARWIN_INSTALL_SCRIPT}
     ./${DARWIN_INSTALL_SCRIPT} --user
 else
