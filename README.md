@@ -28,15 +28,25 @@ Invoke Bazel with the custom toolchain:
 
 `vsco/bazel-toolchains` is tested against the following build matrix:
 
-| Bazel Version  | OSX | Linux |
-| :------------- | :-: | :---: |
-| 0.9.x          | ✗   | ✓     |
-| 0.10.x         | ✗   | ✓     |
-| 0.11.x         | ✗   | ✓     |
-| 0.12.x         | ✓   | ✓     |
-| 0.13.x         | ✓   | ✓     |
+| Bazel Version   | OSX | Linux |
+| :-------------- | :-: | :---: |
+| 0.20.0+         | ✗   | ✗    |
+| 0.19.2          | ✓   | ✓    |
+| 0.18.1          | ✓   | ✓    |
+| 0.17.2          | ✓   | ✓    |
+| 0.16.1          | ✓   | ✓    |
+| 0.15.2          | ✓   | ✓    |
+| 0.14.1          | ✓   | ✓    |
+| 0.13.1          | ✓   | ✓    |
+| 0.12.0          | ✓   | ✓    |
+| ~0.11.x~        | ✗   | ✗     |
+| ~0.10.x~        | ✗   | ✗     |
+| ~0.9.x~         | ✗   | ✗     |
 
 Builds beyond the listed versions are not currently tested.
+
+Bazel `0.20.0+` introduced breaking changes to the [C++ Toolchain API](https://github.com/bazelbuild/bazel/issues/6434)
+which need to be addressed for consumers of this repo in a non-breaking manner.
 
 ## Prerequisites
 

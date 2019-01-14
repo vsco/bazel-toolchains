@@ -183,8 +183,11 @@ toolchain {
   compiler_flag: "external/org_chromium_clang_mac/lib/clang/6.0.0/include"
   compiler_flag: "-isystem"
   compiler_flag: "/usr/include"
+  compiler_flag: "-isystem"
+  compiler_flag: "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include"
   cxx_builtin_include_directory: "/usr/include"
   cxx_builtin_include_directory: "/System/Library/Frameworks"
+  cxx_builtin_include_directory: "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include"
   objcopy_embed_flag: "-I"
   objcopy_embed_flag: "binary"
 

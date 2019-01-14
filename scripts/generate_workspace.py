@@ -17,9 +17,9 @@ class Repository:
     def print_def(self):
         print """
 def %(name)s():
-    native.%(repo_type)s(
+    %(repo_type)s(
         name = '%(name)s',
-        build_file = str(Label('//build_files:%(name)s.BUILD')),""" % {'name': self.name, 'repo_type': self.repo_type} 
+        build_file = str(Label('//build_files:%(name)s.BUILD')),""" % {'name': self.name, 'repo_type': self.repo_type}
 
         for key, value in self.args.iteritems():
             print \
@@ -37,11 +37,11 @@ def get_archive_type(repo):
 def get_http_archives(revision, prefix, fetch_func):
     return [Repository(
         name = prefix + repo['platform'].lower(),
-        repo_type = 'new_http_archive',
+        repo_type = 'http_archive',
         urls = [repo['url']],
         sha256 = "'" + repo['sha256'] + "'",
         type = get_archive_type(repo),
-    ) for repo in fetch_func(revision)]    
+    ) for repo in fetch_func(revision)]
 
 def get_git_repositories(revision, fetch_func):
     return [Repository(
@@ -52,8 +52,8 @@ def get_git_repositories(revision, fetch_func):
     ) for repo in fetch_func(revision)]
 
 def print_workspace(revision):
-    repos = (get_http_archives(revision, 'org_chromium_clang_', chromium_repo.download_clang_info) + 
-             get_http_archives(revision, 'org_chromium_sysroot_', chromium_repo.download_sysroot_info) + 
+    repos = (get_http_archives(revision, 'org_chromium_clang_', chromium_repo.download_clang_info) +
+             get_http_archives(revision, 'org_chromium_sysroot_', chromium_repo.download_sysroot_info) +
              get_http_archives(revision, 'org_chromium_binutils_', chromium_repo.download_binutils_info) +
              get_git_repositories(revision, chromium_repo.download_toolchain_info))
 
@@ -62,6 +62,8 @@ def print_workspace(revision):
         print f.read()
     print '# Defines external repositories needed by bazel-toolchains.'
     print '# Chromium toolchain corresponds to Chromium %s.\n' % revision
+    print 'load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")'
+    print 'load("@bazel_tools//tools/build_defs/repo:git.bzl", "git_repository", "new_git_repository")\n'
     print 'def bazel_toolchains_repositories():'
     for repo in repos:
         repo.print_invocation()
